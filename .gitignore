@@ -1,0 +1,111 @@
+# ═══════════════════════════════════════════════════════════════════════
+# SurahSuite — .gitignore
+# Author: Hatem Frere
+# Purpose: Exclude WordPress core, configs, uploads, IDE/OS files, and
+#          any dev-only artifacts. Track ONLY the theme + plugin + docs.
+# ═══════════════════════════════════════════════════════════════════════
+
+# ─── WordPress Core (project root) ───
+/wp-admin/
+/wp-includes/
+/wp-*.php
+!/wp-config-sample.php
+/wp-config.php
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+/.htaccess
+
+# ─── WordPress Content: keep ONLY our theme + plugin ───
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+/wp-content/themes/*
+!/wp-content/themes/surahsuite/
+/wp-content/plugins/*
+!/wp-content/plugins/surahsuite-core/
+
+# Belt-and-braces for folders that are excluded by the rules above
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/backup-*/
+/wp-content/backups/
+/wp-content/languages/
+/wp-content/mu-plugins/
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+/wp-content/db.php
+/wp-content/debug.log
+
+# ─── Environment & Config ───
+.env
+.env.*
+!.env.example
+*.ini
+php.ini
+
+# ─── Composer (project-root dev only) ───
+# NOTE: This does NOT ignore the theme/plugin vendor/ folders that are
+# shipped with the product. Those are tracked deliberately because
+# ThemeForest rules forbid CDN dependencies — every vendor library
+# lives inside the theme or plugin ZIP.
+/vendor/
+/composer.lock
+
+# ─── Node (reserved for future build tooling) ───
+/node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+.npm/
+
+# ─── Logs, Dumps & Database Files ───
+*.log
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.bak
+*.tmp
+*.orig
+*.rej
+~*
+
+# ─── IDE / Editors ───
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.swp
+*.swo
+*.swn
+*.sublime-*
+
+# ─── OS ───
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Testing / QA ───
+.phpunit.result.cache
+.phpcs.cache
+/.phpcs-cache
+coverage/
+/tests/_output/
+/tests/tmp/
+build/
+
+# ═══════════════════════════════════════════════════════════════════════
+# END OF FILE
+# ═══════════════════════════════════════════════════════════════════════
