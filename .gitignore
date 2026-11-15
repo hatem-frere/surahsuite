@@ -1,15 +1,14 @@
-# ═══════════════════════════════════════════════════════════════════════
-# SurahSuite — .gitignore
+# ============================================================
+# SurahSuite - .gitignore
 # Author: Hatem Frere
 # Purpose: Exclude WordPress core, configs, uploads, IDE/OS files, and
 #          any dev-only artifacts. Track ONLY the theme + plugin + docs.
-# ═══════════════════════════════════════════════════════════════════════
+# ============================================================
 
-# ─── WordPress Core (project root) ───
+# --- WordPress Core (project root) ---
 /wp-admin/
 /wp-includes/
 /wp-*.php
-!/wp-config-sample.php
 /wp-config.php
 /index.php
 /license.txt
@@ -17,7 +16,7 @@
 /xmlrpc.php
 /.htaccess
 
-# ─── WordPress Content: keep ONLY our theme + plugin ───
+# --- WordPress Content: keep ONLY our theme + plugin ---
 /wp-content/*
 !/wp-content/themes/
 !/wp-content/plugins/
@@ -40,29 +39,29 @@
 /wp-content/db.php
 /wp-content/debug.log
 
-# ─── Environment & Config ───
+# --- Environment & Config ---
 .env
 .env.*
 !.env.example
 *.ini
 php.ini
 
-# ─── Composer (project-root dev only) ───
+# --- Composer (project-root dev only) ---
 # NOTE: This does NOT ignore the theme/plugin vendor/ folders that are
 # shipped with the product. Those are tracked deliberately because
-# ThemeForest rules forbid CDN dependencies — every vendor library
+# ThemeForest rules forbid CDN dependencies - every vendor library
 # lives inside the theme or plugin ZIP.
 /vendor/
 /composer.lock
 
-# ─── Node (reserved for future build tooling) ───
+# --- Node (reserved for future build tooling) ---
 /node_modules/
 /package-lock.json
 /yarn.lock
 /pnpm-lock.yaml
 .npm/
 
-# ─── Logs, Dumps & Database Files ───
+# --- Logs, Dumps & Database Files ---
 *.log
 *.sql
 *.sql.gz
@@ -74,7 +73,7 @@ php.ini
 *.rej
 ~*
 
-# ─── IDE / Editors ───
+# --- IDE / Editors ---
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json.example
@@ -87,7 +86,7 @@ php.ini
 *.swn
 *.sublime-*
 
-# ─── OS ───
+# --- OS ---
 .DS_Store
 .DS_Store?
 ._*
@@ -97,7 +96,7 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# ─── Testing / QA ───
+# --- Testing / QA ---
 .phpunit.result.cache
 .phpcs.cache
 /.phpcs-cache
@@ -106,6 +105,6 @@ coverage/
 /tests/tmp/
 build/
 
-# ═══════════════════════════════════════════════════════════════════════
+# ============================================================
 # END OF FILE
-# ═══════════════════════════════════════════════════════════════════════
+# ============================================================
